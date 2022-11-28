@@ -1,0 +1,4 @@
+* @andrey-krendzel
+*.js @andrey-krendzel
+*.yml @andrey-krendzel
+/public/ @andrey-krendzel

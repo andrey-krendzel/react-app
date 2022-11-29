@@ -16,7 +16,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-key: |
-            ${{ runneros }}-node-
+            ${{ runner.os }}-node-
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with: 

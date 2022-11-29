@@ -14,8 +14,9 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-${{ hasFiles('**/package-lock.json') }}
-
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-key: |
+            ${{ runneros }}-node-
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with: 

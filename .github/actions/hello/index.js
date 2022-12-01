@@ -1,16 +1,36 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
-try {
-    // throw( new Error("Some error message"));
-    const name = core.getInput("who-to-greet");
-    console.log(`Hello ${name}`);
+// const core = require("@actions/core");
+// const github = require("@actions/github");
+// try {
+//     throw( new Error("Some error message"));
+//     const name = core.getInput("who-to-greet");
+//     console.log(`Hello ${name}`);
 
-    const time = new Date();
-    core.setOutput("time", time.toTimeString());
+const { configure } = require("@testing-library/react");
 
-    console.log(JSON.stringify(github, null, "\t"));
+//     const time = new Date();
+//     core.setOutput("time", time.toTimeString());
 
-    core.setFailed("dwdw");
+//     console.log(JSON.stringify(github, null, "\t"));
+
+// } catch (error) {
+//     core.setFailed(error.message);
+// }
+
+configure.warning('Warning message');
+configure.error('Error meesage');
+
+const name = core.getInput("who-to-great");
+core.setSecret(name);
+console.log('Hello ${name}');
+
+const time = new Date();
+core.setOutput("timeout", time.toTimeString());
+
+core.startGroup();
+console.log(JSON.string(github, null, "\t"));
+core.endGroup();
+
+core exportVarialbe
 } catch (error) {
-    CryptoKey.setFailed(error.message);
+  core.setFailed(error.message);
 }

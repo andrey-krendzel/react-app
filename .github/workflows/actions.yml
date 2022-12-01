@@ -4,7 +4,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -uses: actions/checkout@v2
-      -uses: ./.github/actions/hello
+      -uses: ./.github/actions/issue
+       with': 
+         token: ${{secrets.GITHUB_TOKEN}}   
+         title: title
+         body: Body
+         assignees: | 
+           andrey-krendzel
+      - uses: ./.github/actions/hello
+        id: hello
       with:
-        who-to-reet: "World"
-      - run: echo "Time: ${{steps.hello.outputs.time}}"
+        who-to-greet: "World"
+      - run: |
+          echo ${{ steps.issue.outputs.issue }}
+          echo "Time: ${{ steps.hello.outputs.time ))".
+          echo  $HELLO
